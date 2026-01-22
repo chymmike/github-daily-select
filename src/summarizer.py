@@ -5,6 +5,7 @@ Gemini 2.5 Flash 摘要生成器
 
 import json
 import os
+import time
 from google import genai
 from google.genai import types
 
@@ -146,6 +147,11 @@ def generate_summaries(repos: list[dict]) -> list[dict]:
         
         repo["summary"] = summary
         print(f"  → {summary.get('what', 'N/A')}")
+        
+        # 避免觸發 Rate Limit (429 Resource Exhausted)
+        # Free tier 限制較嚴格，加入 10 秒緩衝
+        print("  ⏳ Waiting 10s to avoid rate limit...")
+        time.sleep(10)
     
     return repos
 
