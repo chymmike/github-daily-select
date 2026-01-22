@@ -36,8 +36,11 @@ def send_digest_email(repos: list[dict], to_email: str | None = None) -> dict:
     
     today = datetime.now().strftime("%Y-%m-%d")
     
+    # 支援自定義寄件人 (需在 Resend 驗證 Domain)
+    email_from = os.environ.get("EMAIL_FROM", "GitHub Daily Select <onboarding@resend.dev>")
+    
     response = resend.Emails.send({
-        "from": "GitHub Daily Select <onboarding@resend.dev>",
+        "from": email_from,
         "to": [to_email],
         "subject": f"GitHub Trending - {today}",
         "html": html_content,

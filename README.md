@@ -37,6 +37,7 @@ cp .env.example .env
 GEMINI_API_KEY=your_gemini_api_key
 RESEND_API_KEY=your_resend_api_key
 EMAIL_TO=your_email@example.com
+EMAIL_FROM=newsletter@yourdomain.com  # Optional: Default is onboarding@resend.dev
 GITHUB_TOKEN=your_github_token  # Optional but recommended
 ```
 
@@ -57,6 +58,7 @@ python src/main.py
 | `GEMINI_API_KEY` | [Google AI Studio](https://aistudio.google.com/apikey) 取得 |
 | `RESEND_API_KEY` | [Resend Dashboard](https://resend.com/api-keys) 取得 |
 | `EMAIL_TO` | 收件 email 地址 |
+| `EMAIL_FROM` | (選填) 自定義寄件人，需在 Resend 驗證 Domain |
 
 ### 執行時間
 
