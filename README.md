@@ -6,7 +6,7 @@
 
 - 🔥 **自動抓取** — 每日爬取 GitHub Trending Top 5 專案
 - 🤖 **AI 摘要** — 使用 Gemini 2.5 Flash 生成繁體中文摘要
-- 📧 **郵件通知** — 透過 Resend 發送精美 HTML 郵件
+- 📧 **郵件通知** — 透過 Resend 發送極簡風格 HTML 郵件
 - 📦 **資料保存** — 每日結果存成 JSON 檔案
 - ⏰ **自動執行** — GitHub Action 每日定時執行
 
@@ -15,7 +15,7 @@
 ### 1. Clone 專案
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/github-daily-select.git
+git clone https://github.com/chymmike/github-daily-select.git
 cd github-daily-select
 ```
 
@@ -37,6 +37,7 @@ cp .env.example .env
 GEMINI_API_KEY=your_gemini_api_key
 RESEND_API_KEY=your_resend_api_key
 EMAIL_TO=your_email@example.com
+GITHUB_TOKEN=your_github_token  # Optional but recommended
 ```
 
 ### 4. 執行
